@@ -1,5 +1,7 @@
 # :wind_face: Keywind
 
+Tema do Keycloak para o projeto ERP baseado no tema Keywind.
+
 Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) and [Alpine.js](https://github.com/alpinejs/alpine).
 
 ![Preview](./preview.png)
@@ -101,12 +103,12 @@ You can update Keywind components in your own child theme. For example, create a
 When you're ready to deploy your own theme, run the build command to generate a static production build.
 
 ```bash
-pnpm install
-pnpm build
+npm install
+npm run build
 ```
 
 To deploy a theme as an archive, create a JAR archive with the theme resources.
 
 ```bash
-pnpm build:jar
+npm run build:jar
 ```
