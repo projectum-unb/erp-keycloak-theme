@@ -1,8 +1,7 @@
 import archiver from 'archiver';
 import { createWriteStream, existsSync, mkdirSync } from 'fs';
 
-import { name } from '../package.json';
-
+const name = 'erp-keycloak-theme'
 const dir = 'out';
 const file = `${name}.jar`;
 const path = `${dir}/${file}`;
@@ -16,10 +15,14 @@ const archive = archiver('zip');
 archive.on('error', (error) => {
   throw error;
 });
+output.on('close', function () {
+  console.log(archive.pointer() + ' total bytes');
+  console.log('Output generated: ' + path);
+});
 
 archive.pipe(output);
 
 archive.directory('META-INF', 'META-INF');
-archive.directory('theme', 'theme');
+archive.directory('theme/keywind', 'theme/erp');
 
 archive.finalize();

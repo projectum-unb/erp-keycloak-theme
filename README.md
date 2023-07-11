@@ -12,15 +12,15 @@ para que sejam geradas novas classes do Tailwind para os componentes:
 ```bash
 npm install
 npm run build
+npm run build:jar
 ```
 
 > As alterações identificadas pelo Git no diretório `theme/keywind/login` podem ser commitadas
 em conjunto.
 
-Após isto, execute os seguintes passos:
+Para atualizar o Keycloak do projeto `erp-infraestrutura-backend`, execute os seguintes passos:
 
-- Remover o conteúdo do diretório `<ERP-INFRA-HOME>/erp-keycloak/themes/erp/login`
-- Copiar o diretório `themes/keywind/login` para `<ERP-INFRA-HOME>/erp-keycloak/themes/erp/login`
+- Remova o arquivo: `<ERP_INFRA_HOME>/erp-keycloak/providers/erp/erp-theme.jar`
+- Copie o arquivo `out/erp-theme.jar` para `<ERP_INFRA_HOME>/erp-keycloak/providers`
 
-Como o build gera arquivos com nomes aleatórios, isto garantirá que não sobre arquivos gerados
-por builds anteriores.
+O tema estará automaticamente atualizado.
